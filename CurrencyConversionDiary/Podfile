@@ -9,5 +9,4 @@ target 'CurrencyConversionDiary' do
   pod 'RealmSwift', '~> 3.10'
   pod 'Alamofire', '~> 4.7'
   pod 'SwiftyJSON', '~> 4.2'
-  pod 'TextFieldEffects', '~> 1.5'
 end
