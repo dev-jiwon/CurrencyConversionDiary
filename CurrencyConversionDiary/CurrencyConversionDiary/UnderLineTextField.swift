@@ -18,19 +18,23 @@ class UnderLineTextField: UITextField, UITextFieldDelegate {
             let underlineLayer = CALayer()
             underlineLayer.borderWidth = 1
             underlineLayer.borderColor = newValue.cgColor
-            underlineLayer.frame = CGRect(x: 0, y: frame.height + 10, width: frame.width, height: 1)
+            underlineLayer.frame = CGRect(x: 0, y: self.frame.height + 10, width: self.frame.width, height: 1)
             self.underlineLayer = underlineLayer
             layer.addSublayer(underlineLayer)
         }
     }
     
-    @IBAction func textFieldDidBeginEditing(_ textField: UITextField) {
-        print("hi")
-        underlindeColor = .red
+    func setLeftPaddingPoints(_ amount:CGFloat){ //왼쪽에 여백 주기
+        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: amount, height: self.frame.size.height))
+        self.leftView = paddingView
+        self.leftViewMode = .always
     }
     
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        print("nobi")
+    func setRightPaddingPoints(_ amount:CGFloat) { //오른쪽에 여백 주기
+        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: amount, height: self.frame.size.height))
+        self.rightView = paddingView
+        self.rightViewMode = .always
     }
-
+    
+        
 }

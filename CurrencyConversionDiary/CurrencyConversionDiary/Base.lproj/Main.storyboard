@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_5" orientation="portrait">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -14,11 +14,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CurrencyConversionDiary" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DUW-BR-btn">
-                                <rect key="frame" x="157" y="64" width="100" height="100"/>
+                                <rect key="frame" x="137.66666666666666" y="64" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="WLc-qg-dy3"/>
                                     <constraint firstAttribute="height" constant="100" id="gRF-dx-zHY"/>
@@ -26,37 +26,59 @@
                                 <state key="normal" backgroundImage="united-states"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="USD" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JQg-N8-zDN">
-                                <rect key="frame" x="0.0" y="164" width="414" height="26"/>
+                                <rect key="frame" x="0.0" y="164" width="375" height="26"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Li3-5N-P42" customClass="UnderLineTextField" customModule="CurrencyConversionDiary" customModuleProvider="target">
-                                <rect key="frame" x="83" y="228" width="249" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Li3-5N-P42" customClass="UnderLineTextField" customModule="CurrencyConversionDiary" customModuleProvider="target">
+                                <rect key="frame" x="40" y="230" width="295" height="22"/>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="underlindeColor">
                                         <color key="value" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="1Qg-Qs-Zcd"/>
+                                    <action selector="textFieldChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="pes-2j-OfL"/>
+                                    <action selector="textFieldEdidtingDidBegin:" destination="BYZ-38-t0r" eventType="editingDidBegin" id="ftT-59-fHR"/>
+                                    <action selector="textFieldEdidtingDidEnd:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="A4l-lN-vZM"/>
                                 </connections>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1,111 원" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zJQ-eh-yAV">
+                                <rect key="frame" x="40" y="344" width="295" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t2a-tQ-j4e">
+                                <rect key="frame" x="171" y="410" width="32" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="save"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="zJQ-eh-yAV" firstAttribute="width" secondItem="Li3-5N-P42" secondAttribute="width" id="5C7-Dg-xPH"/>
                             <constraint firstItem="JQg-N8-zDN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="8YL-Re-8TG"/>
                             <constraint firstItem="JQg-N8-zDN" firstAttribute="top" secondItem="DUW-BR-btn" secondAttribute="bottom" id="D6V-Aw-mbH"/>
                             <constraint firstItem="DUW-BR-btn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="LJY-Vf-jSd"/>
                             <constraint firstItem="DUW-BR-btn" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="T3y-Tp-3xc"/>
+                            <constraint firstItem="zJQ-eh-yAV" firstAttribute="top" secondItem="Li3-5N-P42" secondAttribute="bottom" constant="92" id="TBw-0P-aky"/>
+                            <constraint firstItem="zJQ-eh-yAV" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="bMo-Yt-gYd"/>
+                            <constraint firstItem="Li3-5N-P42" firstAttribute="top" secondItem="JQg-N8-zDN" secondAttribute="bottom" constant="40" id="cUp-H8-fsA"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JQg-N8-zDN" secondAttribute="trailing" id="cxv-gB-mrw"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Li3-5N-P42" secondAttribute="trailing" constant="40" id="uwg-mK-W0n"/>
+                            <constraint firstItem="Li3-5N-P42" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="vla-Lc-VMW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="resultLabel" destination="zJQ-eh-yAV" id="RfG-u9-WES"/>
+                        <outlet property="textField" destination="Li3-5N-P42" id="2Ao-hU-SP8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
