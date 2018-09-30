@@ -13,6 +13,8 @@
 		13FE9135215FA85700722398 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13FE9134215FA85700722398 /* Assets.xcassets */; };
 		13FE9138215FA85700722398 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13FE9136215FA85700722398 /* LaunchScreen.storyboard */; };
 		13FE9140215FBD9200722398 /* UnderLineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FE913F215FBD9200722398 /* UnderLineTextField.swift */; };
+		13FE9145216121F400722398 /* ChooseCurrencyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FE9143216121F400722398 /* ChooseCurrencyCollectionViewCell.swift */; };
+		13FE9146216121F400722398 /* ChooseCurrencyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13FE9144216121F400722398 /* ChooseCurrencyCollectionViewCell.xib */; };
 		A28A4FDAE09EF5AF242B7CD0 /* Pods_CurrencyConversionDiary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D4CBD6BBA3DE5CE2440FA05 /* Pods_CurrencyConversionDiary.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +27,8 @@
 		13FE9137215FA85700722398 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		13FE9139215FA85700722398 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		13FE913F215FBD9200722398 /* UnderLineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderLineTextField.swift; sourceTree = "<group>"; };
+		13FE9143216121F400722398 /* ChooseCurrencyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseCurrencyCollectionViewCell.swift; sourceTree = "<group>"; };
+		13FE9144216121F400722398 /* ChooseCurrencyCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseCurrencyCollectionViewCell.xib; sourceTree = "<group>"; };
 		15653DFA0773014F5A5C71D7 /* Pods-CurrencyConversionDiary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CurrencyConversionDiary.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CurrencyConversionDiary/Pods-CurrencyConversionDiary.debug.xcconfig"; sourceTree = "<group>"; };
 		6D4CBD6BBA3DE5CE2440FA05 /* Pods_CurrencyConversionDiary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CurrencyConversionDiary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAEEB237175BB0FD3BF6F0EA /* Pods-CurrencyConversionDiary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CurrencyConversionDiary.release.xcconfig"; path = "Pods/Target Support Files/Pods-CurrencyConversionDiary/Pods-CurrencyConversionDiary.release.xcconfig"; sourceTree = "<group>"; };
@@ -63,6 +67,7 @@
 		13FE912C215FA85600722398 /* CurrencyConversionDiary */ = {
 			isa = PBXGroup;
 			children = (
+				13FE91422161217400722398 /* View */,
 				13FE912D215FA85600722398 /* AppDelegate.swift */,
 				13FE912F215FA85600722398 /* ViewController.swift */,
 				13FE913F215FBD9200722398 /* UnderLineTextField.swift */,
@@ -72,6 +77,15 @@
 				13FE9139215FA85700722398 /* Info.plist */,
 			);
 			path = CurrencyConversionDiary;
+			sourceTree = "<group>";
+		};
+		13FE91422161217400722398 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				13FE9143216121F400722398 /* ChooseCurrencyCollectionViewCell.swift */,
+				13FE9144216121F400722398 /* ChooseCurrencyCollectionViewCell.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		5077DB145909CD6EB601DAA3 /* Frameworks */ = {
@@ -151,6 +165,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13FE9146216121F400722398 /* ChooseCurrencyCollectionViewCell.xib in Resources */,
 				13FE9138215FA85700722398 /* LaunchScreen.storyboard in Resources */,
 				13FE9135215FA85700722398 /* Assets.xcassets in Resources */,
 				13FE9133215FA85600722398 /* Main.storyboard in Resources */,
@@ -217,6 +232,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13FE9145216121F400722398 /* ChooseCurrencyCollectionViewCell.swift in Sources */,
 				13FE9140215FBD9200722398 /* UnderLineTextField.swift in Sources */,
 				13FE9130215FA85600722398 /* ViewController.swift in Sources */,
 				13FE912E215FA85600722398 /* AppDelegate.swift in Sources */,
