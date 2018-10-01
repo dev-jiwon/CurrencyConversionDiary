@@ -24,6 +24,8 @@ class UnderLineTextField: UITextField, UITextFieldDelegate {
         }
     }
     
+    //아래 두 함수는 UnderLineTextField를 사용할때 간편하게 좌/우 여백을 주기 위한 함수
+    
     func setLeftPaddingPoints(_ amount:CGFloat){ //왼쪽에 여백 주기
         let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: amount, height: self.frame.size.height))
         self.leftView = paddingView
