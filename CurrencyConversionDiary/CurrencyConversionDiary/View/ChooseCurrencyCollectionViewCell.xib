@@ -76,7 +76,14 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="113" height="165"/>
-            <point key="canvasLocation" x="236" y="179.46026986506749"/>
+            <connections>
+                <outlet property="countryTextLabel" destination="4GS-hL-U4F" id="9AA-ak-MWq"/>
+                <outlet property="currencyTextLabel" destination="BfJ-Sj-QYg" id="2qO-If-a1p"/>
+                <outlet property="imageView" destination="enc-9b-LEL" id="SPT-0p-Yyk"/>
+                <outlet property="likeButton" destination="Gxb-mx-Loi" id="lyY-cY-fqs"/>
+                <outlet property="mainView" destination="6j3-K6-9qo" id="9i4-Qb-IGr"/>
+            </connections>
+            <point key="canvasLocation" x="934" y="175"/>
         </collectionViewCell>
     </objects>
     <resources>
