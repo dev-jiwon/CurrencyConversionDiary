@@ -26,7 +26,7 @@ class ChooseCurrencyCollectionViewCell: UICollectionViewCell {
     func makeMainViewBorder() {
         mainView.layer.borderWidth = 0.5
         mainView.layer.borderColor = UIColor.lightGray.cgColor
-        mainView.layer.cornerRadius = mainView.frame.width/2
+        mainView.layer.cornerRadius = 10
         mainView.layer.masksToBounds = true
     }
 

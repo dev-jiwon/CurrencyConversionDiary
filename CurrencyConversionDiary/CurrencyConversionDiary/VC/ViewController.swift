@@ -20,6 +20,17 @@ class ViewController: UIViewController {
         textField.setRightPaddingPoints(30)
     }
 
+    @IBAction func chooseCurrencyConversionButtonTouched(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let chooseCurrencyViewController = storyboard.instantiateViewController(withIdentifier: "ChooseCurrencyViewController") as! ChooseCurrencyViewController
+        
+        show(chooseCurrencyViewController, sender: nil)
+    }
+    
+}
+
+//textField 관련
+extension ViewController {
     @IBAction func textFieldEdidtingDidBegin(_ sender: UnderLineTextField) {
         sender.underlindeColor = .red
     }
@@ -32,4 +43,3 @@ class ViewController: UIViewController {
         resultLabel.text = "\((Int(textField.text!) ?? 0) * 1111)  원"
     }
 }
-
