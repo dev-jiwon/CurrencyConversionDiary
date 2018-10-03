@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1375A9A4216495FE00D789EA /* CurrencyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1375A9A3216495FE00D789EA /* CurrencyModel.swift */; };
+		1375A9A621649DB300D789EA /* DiaryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1375A9A521649DB300D789EA /* DiaryModel.swift */; };
 		13FE912E215FA85600722398 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FE912D215FA85600722398 /* AppDelegate.swift */; };
 		13FE9130215FA85600722398 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FE912F215FA85600722398 /* ViewController.swift */; };
 		13FE9133215FA85600722398 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13FE9131215FA85600722398 /* Main.storyboard */; };
@@ -20,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1375A9A3216495FE00D789EA /* CurrencyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyModel.swift; sourceTree = "<group>"; };
+		1375A9A521649DB300D789EA /* DiaryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryModel.swift; sourceTree = "<group>"; };
 		13FE912A215FA85600722398 /* CurrencyConversionDiary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CurrencyConversionDiary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13FE912D215FA85600722398 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		13FE912F215FA85600722398 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -48,6 +52,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1375A9A22164942500D789EA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1375A9A3216495FE00D789EA /* CurrencyModel.swift */,
+				1375A9A521649DB300D789EA /* DiaryModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		13FE9121215FA85600722398 = {
 			isa = PBXGroup;
 			children = (
@@ -71,6 +84,7 @@
 			children = (
 				13FE91422161217400722398 /* View */,
 				13FE914721626F0900722398 /* VC */,
+				1375A9A22164942500D789EA /* Model */,
 				13FE912D215FA85600722398 /* AppDelegate.swift */,
 				13FE913F215FBD9200722398 /* UnderLineTextField.swift */,
 				13FE9131215FA85600722398 /* Main.storyboard */,
@@ -245,9 +259,11 @@
 			files = (
 				13FE914921626F4D00722398 /* ChooseCurrencyViewController.swift in Sources */,
 				13FE9145216121F400722398 /* ChooseCurrencyCollectionViewCell.swift in Sources */,
+				1375A9A4216495FE00D789EA /* CurrencyModel.swift in Sources */,
 				13FE9140215FBD9200722398 /* UnderLineTextField.swift in Sources */,
 				13FE9130215FA85600722398 /* ViewController.swift in Sources */,
 				13FE912E215FA85600722398 /* AppDelegate.swift in Sources */,
+				1375A9A621649DB300D789EA /* DiaryModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
