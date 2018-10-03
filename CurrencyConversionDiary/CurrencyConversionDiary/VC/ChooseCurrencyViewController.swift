@@ -37,5 +37,33 @@ extension ChooseCurrencyViewController: UICollectionViewDataSource, UICollection
         return cell
     }
     
+    //---------디자인 관련---------
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: CGFloat(5), left: CGFloat(5), bottom: CGFloat(5), right: CGFloat(5))
+    }
+    //세로
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 5
+    }
+    
+    //가로
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let myWidth = view.frame.width / 3 - 5
+        return CGSize.init(width: myWidth, height: 1013 * myWidth / 653)
+    }
+    
+    //특정 cell선택될때
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print(indexPath.row)
+    }
     
 }
