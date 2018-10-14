@@ -12,6 +12,9 @@ let currencyPListName = "CurrencyList"   //지원하는 화폐 리스트를 갖�
 
 class ChooseCurrencyViewController: UIViewController {
     var currencyList: [[String]] = []
+    var cellArr: [ChooseCurrencyCollectionViewCell] = []
+    var selectedCellIndex = 0
+    let nowCurrencyName = UserDefaults.standard.string(forKey: "currency")!
     
     @IBOutlet weak var collectionView: UICollectionView!
     override func viewDidLoad() {
@@ -20,10 +23,40 @@ class ChooseCurrencyViewController: UIViewController {
         setCollectionView()
     }
     
+    @IBAction func saveSelectedCurrency(_ sender: Any) {
+        UserDefaults.standard.set(cellArr[selectedCellIndex].currencyTextLabel.text!, forKey: "currency")
+        if let nav = self.navigationController {
+            nav.popViewController(animated: true)
+        } else {
+            self.dismiss(animated: true, completion: nil)
+        }
+    }
+    
+}
+
+// 최초 상태를 설정
+extension ChooseCurrencyViewController {
     func getCurrencyList() {
+        //currencyPListName.plist에서 데이터 가져옴
         let myUrl = Bundle.main.url(forResource: currencyPListName, withExtension: "plist")
         currencyList = NSArray(contentsOf: myUrl!) as! [[String]]
     }
+    
+    func setDefaultCellDesign(cell: ChooseCurrencyCollectionViewCell) {
+        cell.mainView.backgroundColor = .white
+        cell.countryTextLabel.textColor = .black
+        cell.currencyTextLabel.textColor = .black
+    }
+    
+    func setSelectedCellDesign(cell: ChooseCurrencyCollectionViewCell) {
+        cell.mainView.backgroundColor = .lightGray
+        cell.countryTextLabel.textColor = .white
+        cell.currencyTextLabel.textColor = .white
+    }
+}
+
+extension ChooseCurrencyViewController {
+    
 }
 
 
@@ -46,9 +79,16 @@ extension ChooseCurrencyViewController: UICollectionViewDataSource, UICollection
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ChooseCurrencyCollectionViewCell", for: indexPath) as! ChooseCurrencyCollectionViewCell
         let nowData = currencyList[indexPath.row]
+        if nowData[0] == nowCurrencyName {
+            selectedCellIndex = indexPath.row
+            setSelectedCellDesign(cell: cell)
+        } else {
+            setDefaultCellDesign(cell: cell)
+        }
         cell.currencyTextLabel.text = nowData[0]
         cell.imageView.image = UIImage(named: nowData[0])
         cell.countryTextLabel.text = nowData[1]
+        cellArr.append(cell)
         return cell
     }
     
@@ -78,6 +118,10 @@ extension ChooseCurrencyViewController: UICollectionViewDataSource, UICollection
     
     //특정 cell선택될때
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        setDefaultCellDesign(cell: cellArr[selectedCellIndex])
+        selectedCellIndex = indexPath.row
+        setSelectedCellDesign(cell: cellArr[selectedCellIndex])
+        
         print(indexPath.row)
     }
     

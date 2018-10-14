@@ -12,22 +12,30 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var textField: UnderLineTextField!
     @IBOutlet weak var resultLabel: UILabel!
+    @IBOutlet weak var currencyNameLabel: UILabel!
+    @IBOutlet weak var chooseCurrencyButton: UIButton!
+    
     var currencyNow = 0.0
+    var nowCurrencyName = UserDefaults.standard.string(forKey: "currency") ?? "USD"
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-//        setTextField()
+        NotificationCenter.default.addObserver(self, selector: #selector(notificationReceived(notification:)), name: Notification.Name("getCurrencyNoti"), object: nil)
         textField.setRightPaddingPoints(30)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
         setDefault()
     }
     
     func setDefault() {
-        NotificationCenter.default.addObserver(self, selector: #selector(notificationReceived(notification:)), name: Notification.Name("getCurrencyNoti"), object: nil)
+        
         if UserDefaults.standard.object(forKey: "currency") == nil {
             UserDefaults.standard.set("USD", forKey: "currency") //저장
         }
         CurrencyExchangeCenter().getCurrency()
+        
     }
 
     @IBAction func chooseCurrencyConversionButtonTouched(_ sender: UIButton) {
@@ -51,18 +59,20 @@ extension ViewController {
     
     @IBAction func textFieldChanged(_ sender: UnderLineTextField) {
         print(currencyNow)
-        resultLabel.text = "\(String(format: "%.2f", (Double(textField.text!) ?? 0) * currencyNow))  원"
+        resultLabel.text = "\(String(format: "%.0f", (Double(textField.text!) ?? 0) * currencyNow))  원"
     }
 }
 
 //notification 관련
 extension ViewController {
     @objc func notificationReceived(notification: Notification) {
+        nowCurrencyName = UserDefaults.standard.string(forKey: "currency") ?? "USD"
         guard let notificationUserInfo = notification.userInfo as? [String: Double],
             let currencyResult = notificationUserInfo["currency"] else { return }
         currencyNow = currencyResult
-        resultLabel.text = "\(String(format: "%.2f", (Double(textField.text!) ?? 0) * currencyNow))  원"
-        
+        resultLabel.text = "\(String(format: "%.0f", (Double(textField.text!) ?? 0) * currencyNow))  원"
+        chooseCurrencyButton.setBackgroundImage(UIImage(named: nowCurrencyName), for: .normal)
+        currencyNameLabel.text = nowCurrencyName
         print("aaaa\(currencyNow)")
     }
 }

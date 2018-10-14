@@ -46,7 +46,7 @@
                                     <constraint firstAttribute="width" secondItem="Gxb-mx-Loi" secondAttribute="height" multiplier="1:1" id="f5u-no-25d"/>
                                     <constraint firstAttribute="width" constant="17" id="lfq-xv-Z2e"/>
                                 </constraints>
-                                <state key="normal" backgroundImage="favorite-heart-button-pink"/>
+                                <state key="normal" backgroundImage="favorite-heart-button-dark-gray"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -88,6 +88,6 @@
     </objects>
     <resources>
         <image name="CNY" width="409.60000610351562" height="409.60000610351562"/>
-        <image name="favorite-heart-button-pink" width="204.80000305175781" height="204.80000305175781"/>
+        <image name="favorite-heart-button-dark-gray" width="204.80000305175781" height="204.80000305175781"/>
     </resources>
 </document>
