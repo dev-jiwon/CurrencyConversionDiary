@@ -70,5 +70,41 @@
 		<string>DKK</string>
 		<string>덴마크</string>
 	</array>
+	<array>
+		<string>THB</string>
+		<string>태국</string>
+	</array>
+	<array>
+		<string>PHP</string>
+		<string>필리핀</string>
+	</array>
+	<array>
+		<string>MXN</string>
+		<string>멕시코</string>
+	</array>
+	<array>
+		<string>BRL</string>
+		<string>브라질</string>
+	</array>
+	<array>
+		<string>RUB</string>
+		<string>러시아</string>
+	</array>
+	<array>
+		<string>HUF</string>
+		<string>헝가리</string>
+	</array>
+	<array>
+		<string>PLN</string>
+		<string>폴란드</string>
+	</array>
+	<array>
+		<string>ISK</string>
+		<string>아이슬란드</string>
+	</array>
+	<array>
+		<string>INR</string>
+		<string>인도</string>
+	</array>
 </array>
 </plist>

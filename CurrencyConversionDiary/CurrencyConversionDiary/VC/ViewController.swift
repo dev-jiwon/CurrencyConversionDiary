@@ -12,12 +12,22 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var textField: UnderLineTextField!
     @IBOutlet weak var resultLabel: UILabel!
+    var currencyNow = 0.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
 //        setTextField()
         textField.setRightPaddingPoints(30)
+        setDefault()
+    }
+    
+    func setDefault() {
+        NotificationCenter.default.addObserver(self, selector: #selector(notificationReceived(notification:)), name: Notification.Name("getCurrencyNoti"), object: nil)
+        if UserDefaults.standard.object(forKey: "currency") == nil {
+            UserDefaults.standard.set("USD", forKey: "currency") //저장
+        }
+        CurrencyExchangeCenter().getCurrency()
     }
 
     @IBAction func chooseCurrencyConversionButtonTouched(_ sender: UIButton) {
@@ -40,6 +50,19 @@ extension ViewController {
     }
     
     @IBAction func textFieldChanged(_ sender: UnderLineTextField) {
-        resultLabel.text = "\((Int(textField.text!) ?? 0) * 1111)  원"
+        print(currencyNow)
+        resultLabel.text = "\(String(format: "%.2f", (Double(textField.text!) ?? 0) * currencyNow))  원"
+    }
+}
+
+//notification 관련
+extension ViewController {
+    @objc func notificationReceived(notification: Notification) {
+        guard let notificationUserInfo = notification.userInfo as? [String: Double],
+            let currencyResult = notificationUserInfo["currency"] else { return }
+        currencyNow = currencyResult
+        resultLabel.text = "\(String(format: "%.2f", (Double(textField.text!) ?? 0) * currencyNow))  원"
+        
+        print("aaaa\(currencyNow)")
     }
 }
