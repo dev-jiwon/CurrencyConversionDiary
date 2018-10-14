@@ -21,7 +21,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6j3-K6-9qo">
                         <rect key="frame" x="0.0" y="0.0" width="113" height="165"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="034-china" translatesAutoresizingMaskIntoConstraints="NO" id="enc-9b-LEL">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CNY" translatesAutoresizingMaskIntoConstraints="NO" id="enc-9b-LEL">
                                 <rect key="frame" x="8.5" y="14.5" width="96" height="96"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="enc-9b-LEL" secondAttribute="height" multiplier="1:1" id="YvA-LG-nFK"/>
@@ -87,7 +87,7 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="034-china" width="409.60000610351562" height="409.60000610351562"/>
+        <image name="CNY" width="409.60000610351562" height="409.60000610351562"/>
         <image name="favorite-heart-button-pink" width="204.80000305175781" height="204.80000305175781"/>
     </resources>
 </document>
