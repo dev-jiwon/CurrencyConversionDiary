@@ -11,7 +11,7 @@ import UIKit
 let currencyPListName = "CurrencyList"   //지원하는 화폐 리스트를 갖고있는 PList 이름
 
 class ChooseCurrencyViewController: UIViewController {
-    var currencyList: [String] = []
+    var currencyList: [[String]] = []
     
     @IBOutlet weak var collectionView: UICollectionView!
     override func viewDidLoad() {
@@ -21,9 +21,8 @@ class ChooseCurrencyViewController: UIViewController {
     }
     
     func getCurrencyList() {
-        
         let myUrl = Bundle.main.url(forResource: currencyPListName, withExtension: "plist")
-        currencyList = NSArray(contentsOf: myUrl!) as! [String]
+        currencyList = NSArray(contentsOf: myUrl!) as! [[String]]
     }
 }
 
@@ -46,8 +45,10 @@ extension ChooseCurrencyViewController: UICollectionViewDataSource, UICollection
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ChooseCurrencyCollectionViewCell", for: indexPath) as! ChooseCurrencyCollectionViewCell
-        cell.currencyTextLabel.text = currencyList[indexPath.row]
-        cell.imageView.image = UIImage(named: currencyList[indexPath.row])
+        let nowData = currencyList[indexPath.row]
+        cell.currencyTextLabel.text = nowData[0]
+        cell.imageView.image = UIImage(named: nowData[0])
+        cell.countryTextLabel.text = nowData[1]
         return cell
     }
     
