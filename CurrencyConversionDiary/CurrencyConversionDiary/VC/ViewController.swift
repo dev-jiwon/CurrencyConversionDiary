@@ -46,11 +46,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func saveButtonTouched(_ sender: UIButton) {
-        let popup: AddDiaryDialog = UINib(nibName: "AddDiaryDialog", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! AddDiaryDialog
-        popup.frame = self.view.frame // 팝업뷰를 화면크기에 맞추기
-        let viewColor = UIColor.black
-        popup.backgroundColor = viewColor.withAlphaComponent(0.3)
-        self.view.addSubview(popup)
+        
     }
     
     
