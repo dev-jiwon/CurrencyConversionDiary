@@ -46,12 +46,14 @@ extension ChooseCurrencyViewController {
         cell.mainView.backgroundColor = .white
         cell.countryTextLabel.textColor = .black
         cell.currencyTextLabel.textColor = .black
+        cell.likeButton.setBackgroundImage(UIImage(named: "favorite-heart-button-dark-gray"), for: .normal)
     }
     
     func setSelectedCellDesign(cell: ChooseCurrencyCollectionViewCell) {
         cell.mainView.backgroundColor = .lightGray
         cell.countryTextLabel.textColor = .white
         cell.currencyTextLabel.textColor = .white
+        cell.likeButton.setBackgroundImage(UIImage(named: "favorite-heart-button-white"), for: .normal)
     }
 }
 
