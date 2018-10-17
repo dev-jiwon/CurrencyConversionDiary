@@ -12,6 +12,8 @@
 		1375A9A4216495FE00D789EA /* CurrencyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1375A9A3216495FE00D789EA /* CurrencyModel.swift */; };
 		1375A9A621649DB300D789EA /* DiaryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1375A9A521649DB300D789EA /* DiaryModel.swift */; };
 		1375A9A82164A3A400D789EA /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1375A9A72164A3A300D789EA /* CategoryModel.swift */; };
+		13F988D921771A58009087A9 /* AddDiaryDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F988D821771A58009087A9 /* AddDiaryDialog.swift */; };
+		13F988DB21771A62009087A9 /* AddDiaryDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13F988DA21771A62009087A9 /* AddDiaryDialog.xib */; };
 		13FE912E215FA85600722398 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FE912D215FA85600722398 /* AppDelegate.swift */; };
 		13FE9130215FA85600722398 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FE912F215FA85600722398 /* ViewController.swift */; };
 		13FE9133215FA85600722398 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13FE9131215FA85600722398 /* Main.storyboard */; };
@@ -30,6 +32,8 @@
 		1375A9A3216495FE00D789EA /* CurrencyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyModel.swift; sourceTree = "<group>"; };
 		1375A9A521649DB300D789EA /* DiaryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryModel.swift; sourceTree = "<group>"; };
 		1375A9A72164A3A300D789EA /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
+		13F988D821771A58009087A9 /* AddDiaryDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDiaryDialog.swift; sourceTree = "<group>"; };
+		13F988DA21771A62009087A9 /* AddDiaryDialog.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddDiaryDialog.xib; sourceTree = "<group>"; };
 		13FE912A215FA85600722398 /* CurrencyConversionDiary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CurrencyConversionDiary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13FE912D215FA85600722398 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		13FE912F215FA85600722398 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -117,6 +121,8 @@
 				13FE9143216121F400722398 /* ChooseCurrencyCollectionViewCell.swift */,
 				13FE9144216121F400722398 /* ChooseCurrencyCollectionViewCell.xib */,
 				13FE913F215FBD9200722398 /* UnderLineTextField.swift */,
+				13F988D821771A58009087A9 /* AddDiaryDialog.swift */,
+				13F988DA21771A62009087A9 /* AddDiaryDialog.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -210,6 +216,7 @@
 				13FE9146216121F400722398 /* ChooseCurrencyCollectionViewCell.xib in Resources */,
 				13FE9138215FA85700722398 /* LaunchScreen.storyboard in Resources */,
 				13FE9135215FA85700722398 /* Assets.xcassets in Resources */,
+				13F988DB21771A62009087A9 /* AddDiaryDialog.xib in Resources */,
 				1306869E2172FBED009A05C1 /* CurrencyList.plist in Resources */,
 				13FE9133215FA85600722398 /* Main.storyboard in Resources */,
 			);
@@ -278,6 +285,7 @@
 				13FE914921626F4D00722398 /* ChooseCurrencyViewController.swift in Sources */,
 				13FE9145216121F400722398 /* ChooseCurrencyCollectionViewCell.swift in Sources */,
 				130686A0217306A5009A05C1 /* CurrencyExchangeCenter.swift in Sources */,
+				13F988D921771A58009087A9 /* AddDiaryDialog.swift in Sources */,
 				1375A9A4216495FE00D789EA /* CurrencyModel.swift in Sources */,
 				13FE9140215FBD9200722398 /* UnderLineTextField.swift in Sources */,
 				13FE9130215FA85600722398 /* ViewController.swift in Sources */,

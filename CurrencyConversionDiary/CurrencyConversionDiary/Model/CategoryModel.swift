@@ -20,6 +20,6 @@ public func addItem(title: String, id: Int) {
     categoryModel.id = id
     let realm = try! Realm()
     try! realm.write {
-        realm.add(categoryModel )
+        realm.add(categoryModel)
     }
 }

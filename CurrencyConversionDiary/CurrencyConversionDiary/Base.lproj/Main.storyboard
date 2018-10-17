@@ -60,6 +60,9 @@
                                 <rect key="frame" x="171" y="410" width="32" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="save"/>
+                                <connections>
+                                    <action selector="saveButtonTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jUF-9E-aeG"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
