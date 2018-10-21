@@ -16,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        setupRootViewController()
         return true
     }
 
@@ -40,7 +41,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
+//
+//    private func initializeApp() {
+////        setupSessionChangeNotification()
+//        setupRootViewController()
+//    }
+    
+//    private func setupSessionChangeNotification() {
+//        NotificationCenter.default.addObserver(forName: Notification.Name.KOSessionDidChange, object: nil, queue: .main) { [unowned self] noti in
+//            guard let session = noti.object as? KOSession else {return}
+//            session.isOpen() ? print("Login") : print("Logout")
+//            self.setupRootViewController()
+//        }
+//    }
+    
+    func setupRootViewController() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let navigationController = storyboard.instantiateInitialViewController() as! UINavigationController
+        var storyboardID = "MainViewController"
+        if UserDefaults.standard.object(forKey: "currency") == nil {
+            storyboardID = "FirstViewController"
+        }
+//        let storyboardID = KOSession.shared().isOpen() ? "MainViewController" : "LoginViewController"
+        
+        let vc = storyboard.instantiateViewController(withIdentifier: storyboardID)
+        navigationController.viewControllers = [vc]
+        window?.rootViewController = navigationController
+    }
 
 }
 

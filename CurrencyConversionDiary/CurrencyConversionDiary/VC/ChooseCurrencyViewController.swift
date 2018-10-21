@@ -14,7 +14,7 @@ class ChooseCurrencyViewController: UIViewController {
     var currencyList: [[String]] = []
     var cellArr: [ChooseCurrencyCollectionViewCell] = []
     var selectedCellIndex = 0
-    let nowCurrencyName = UserDefaults.standard.string(forKey: "currency")!
+    let nowCurrencyName = UserDefaults.standard.string(forKey: "currency") ?? "USD"
     
     @IBOutlet weak var collectionView: UICollectionView!
     override func viewDidLoad() {
