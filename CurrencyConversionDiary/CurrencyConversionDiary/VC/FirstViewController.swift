@@ -23,16 +23,9 @@ class FirstViewController: UIViewController {
     }
 
     @IBAction func skipButtonTouched(_ sender: UIButton) {
-        
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        let navigationController = storyboard.instantiateInitialViewController() as! UINavigationController
-//        let vc = storyboard.instantiateViewController(withIdentifier: "MainViewController")
-//        navigationController.viewControllers = [vc]
-//        window?.rootViewController = navigationController
-        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let secondViewController = storyboard.instantiateViewController(withIdentifier: "ChooseCurrencyViewController") //Storyboard ID를 설정해줘야 한다.
-//        show(secondViewController, sender: nil)
-        present(secondViewController, animated: true, completion: nil)
+        let secondViewController = storyboard.instantiateViewController(withIdentifier: "MainViewController") //Storyboard ID를 설정해줘야 한다.
+        secondViewController.navigationItem.hidesBackButton = true
+        show(secondViewController, sender: nil)
     }
 }
