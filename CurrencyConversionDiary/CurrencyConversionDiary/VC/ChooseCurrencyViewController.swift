@@ -13,8 +13,9 @@ let currencyPListName = "CurrencyList"   //지원하는 화폐 리스트를 갖�
 class ChooseCurrencyViewController: UIViewController {
     var currencyList: [[String]] = []
     var cellArr: [ChooseCurrencyCollectionViewCell] = []
-    var selectedCellIndex = 0
+    var selectedCellIndex = -1
     let nowCurrencyName = UserDefaults.standard.string(forKey: "currency") ?? "USD"
+    var isItFromeFirstViewController = false
     
     @IBOutlet weak var collectionView: UICollectionView!
     override func viewDidLoad() {
@@ -25,10 +26,16 @@ class ChooseCurrencyViewController: UIViewController {
     
     @IBAction func saveSelectedCurrency(_ sender: Any) {
         UserDefaults.standard.set(cellArr[selectedCellIndex].currencyTextLabel.text!, forKey: "currency")
-        if let nav = self.navigationController {
-            nav.popViewController(animated: true)
+        if isItFromeFirstViewController {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let nextViewController = storyboard.instantiateViewController(withIdentifier: "HowMuchMoneyViewController")
+            show(nextViewController, sender: nil)
         } else {
-            self.dismiss(animated: true, completion: nil)
+            if let nav = self.navigationController {
+                nav.popViewController(animated: true)
+            } else {
+                self.dismiss(animated: true, completion: nil)
+            }
         }
     }
     
@@ -56,12 +63,6 @@ extension ChooseCurrencyViewController {
         cell.likeButton.setBackgroundImage(UIImage(named: "favorite-heart-button-white"), for: .normal)
     }
 }
-
-extension ChooseCurrencyViewController {
-    
-}
-
-
 
 extension ChooseCurrencyViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     

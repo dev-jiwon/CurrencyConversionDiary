@@ -18,7 +18,8 @@ class FirstViewController: UIViewController {
     
     @IBAction func chooseButtonTouched(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let secondViewController = storyboard.instantiateViewController(withIdentifier: "ChooseCurrencyViewController") //Storyboard ID를 설정해줘야 한다.
+        let secondViewController = storyboard.instantiateViewController(withIdentifier: "ChooseCurrencyViewController") as! ChooseCurrencyViewController //Storyboard ID를 설정해줘야 한다.
+        secondViewController.isItFromeFirstViewController = true
         show(secondViewController, sender: nil)
     }
 
